@@ -5,7 +5,7 @@
   "description": "Full text benchmark with academic papers from PMC",
   "indices": [
     {
-      "name": "pmc",
+      "name": {{index_name | default("pmc")}},
       "body": "index.json"
     }
   ],
