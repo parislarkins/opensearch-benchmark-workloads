@@ -26,7 +26,7 @@
           "name": "check-cluster-health",
           "operation": {
             "operation-type": "cluster-health",
-            "index": "pmc",
+            "index": "pmc{{ now | int }}",
             "request-params": {
               "wait_for_status": "{{cluster_health | default('green')}}",
               "wait_for_no_relocating_shards": "true"
@@ -129,7 +129,7 @@
           "name": "check-cluster-health",
           "operation": {
             "operation-type": "cluster-health",
-            "index": "pmc",
+            "index": "pmc{{ now | int }}",
             "request-params": {
               "wait_for_status": "{{cluster_health | default('green')}}",
               "wait_for_no_relocating_shards": "true"
@@ -195,7 +195,7 @@
           "name": "check-cluster-health",
           "operation": {
             "operation-type": "cluster-health",
-            "index": "pmc",
+            "index": "pmc{{ now | int }}",
             "request-params": {
               "wait_for_status": "{{cluster_health | default('green')}}",
               "wait_for_no_relocating_shards": "true"
@@ -259,7 +259,7 @@
           "name": "check-cluster-health",
           "operation": {
             "operation-type": "cluster-health",
-            "index": "pmc",
+            "index": "pmc{{ now | int }}",
             "request-params": {
               "wait_for_status": "{{cluster_health | default('green')}}",
               "wait_for_no_relocating_shards": "true"
