@@ -83,5 +83,25 @@
       "clients": {{ search_clients | default(1)}}
     }
   ]
+},
+{
+  "name": "semantic-search-index-and-query-only",
+  "description": "Ingests the corpus and then runs neural clause queries with Semantic search, applicable only when pipelines and model are created.",
+  "default": false,
+  "schedule": [
+    {{ benchmark.collect(parts="../../common_operations/delete_index.json") }},
+    {{ benchmark.collect(parts="common/create_index_and_ingest_document.json") }},
+    {%- if concurrent_segment_search_enabled is defined %}
+    {
+      "operation": "put-concurrent-segment-search-setting"
+    },
+    {%- endif %}
+    {
+      "operation": "semantic-search",
+      "warmup-iterations": {{warmup_iterations | default(100) | tojson}},
+      "iterations": {{iterations | default(100) | tojson }},
+      "target-throughput": {{ target_throughput | default(0) | tojson}},
+      "clients": {{ search_clients | default(1)}}
+    }
+  ]
 }
-

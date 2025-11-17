@@ -106,7 +106,8 @@
   "model-name": "{{ model_name | default('huggingface/sentence-transformers/all-mpnet-base-v2')}}",
   "model-version": "{{ model_version | default('1.0.2') }}",
   "model-format": "{{ model_format | default('TORCH_SCRIPT') }}",
-  "model-config-file": "{{ model_config_file | default('') }}"
+  "model-config-file": "{{ model_config_file | default('') }}",
+  "timeout": 6000
 },
 {
   "name": "delete-ml-model-sentence-transformer",
