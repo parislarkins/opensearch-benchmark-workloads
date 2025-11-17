@@ -86,7 +86,7 @@
 },
 {
   "name": "semantic-search-index-and-query-only",
-  "description": "Ingests the corpus and then runs neural clause queries with Semantic search, applicable only when pipelines and model are created.",
+  "description": "Ingests the corpus and then runs match_all then neural clause queries with Semantic search, applicable only when pipelines and model are created.",
   "default": false,
   "schedule": [
     {{ benchmark.collect(parts="../../common_operations/delete_index.json") }},
@@ -96,6 +96,7 @@
       "operation": "put-concurrent-segment-search-setting"
     },
     {%- endif %}
+    {{ benchmark.collect(parts="common/match_all_search.json") }},
     {
       "operation": "semantic-search",
       "warmup-iterations": {{warmup_iterations | default(100) | tojson}},
