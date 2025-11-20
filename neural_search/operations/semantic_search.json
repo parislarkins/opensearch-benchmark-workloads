@@ -73,7 +73,7 @@
           {
               "action_type": "predict",
               "method": "POST",
-              "url": "https://runtime.sagemaker.${parameters.region}.amazonaws.com/endpoints/{{ sagemaker_endpoint }}/invocations",
+              "url": "{{ sagemaker_endpoint_url }}",
               "headers": {
                   "content-type": "application/json",
                   "x-amz-content-sha256": "required"
