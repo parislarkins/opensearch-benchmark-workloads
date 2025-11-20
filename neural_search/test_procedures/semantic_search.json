@@ -116,7 +116,7 @@
       "operation": "delete-ingest-pipeline"
     },
     {
-      "operation": "delete-sagemaker-remote-ml-model"
+      "operation": "delete-ml-model-sentence-transformer"
     },
     {
       "operation": "delete-sagemaker-ml-connector"
@@ -162,7 +162,7 @@
       "operation": "delete-ingest-pipeline"
     },
     {
-      "operation": "delete-sagemaker-remote-ml-model"
+      "operation": "delete-ml-model-sentence-transformer"
     },
     {
       "operation": "delete-sagemaker-ml-connector"
