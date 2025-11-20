@@ -129,10 +129,12 @@
       "operation": "put-concurrent-segment-search-setting"
     },
     {%- endif %}
+    {
       "operation": "create-sagemaker-ml-connector"
     },
     {
       "operation": "register-sagemaker-remote-ml-model"
+    },
     {
       "operation": "deploy-ml-model"
     },
