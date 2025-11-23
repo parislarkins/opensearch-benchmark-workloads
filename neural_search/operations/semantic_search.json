@@ -78,9 +78,9 @@
                   "content-type": "application/json",
                   "x-amz-content-sha256": "required"
               },
-              "request_body": "${parameters.input}",
-              "pre_process_function": "{{ pre_process_function | default('connector.pre_process.default.embedding') }}",
-              "post_process_function": "{{ post_process_function | default('connector.post_process.default.embedding') }}"
+              "request_body": "{{ request_body | safe | default('${parameters.input}') }}",
+              "pre_process_function": "{{ pre_process_function | safe | default('connector.pre_process.default.embedding') }}",
+              "post_process_function": "{{ post_process_function | safe | default('connector.post_process.default.embedding') }}"
           }
       ]
   }
